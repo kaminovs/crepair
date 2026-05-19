@@ -103,4 +103,6 @@ paper/CRepair_Research_Proposal_v1_3_FINAL.docx
 
 ## Citation
 
-Coming soon (Zenodo DOI)
+Kaminovs, S. (2026). CRepair Benchmark v0.2 [Software].
+Zenodo.
+https://doi.org/10.5281/zenodo.20283370
