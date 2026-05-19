@@ -2,74 +2,105 @@
 
 **Detecting and Repairing Coherence Failures in Long-Horizon AI Agents**
 
-> *Current AI evaluation primarily measures whether systems remain coherent.  
-> We measure whether they can detect, diagnose, and recover from their own coherence failures.*
+> Current AI evaluation primarily measures whether systems remain coherent.
+> CRepair measures whether they can detect, diagnose, and recover from their own coherence failures.
 
 ---
 
-## The C_repair Metric
+## Why CRepair?
 
-```
-C_repair = D × R × V × S       (all components in [0, 1])
-```
+Long-horizon AI agents often fail silently:
 
-| Component | Measures | Score 1 | Score 0 |
-|-----------|----------|---------|---------|
-| **D** Detection | Agent notices failure without prompting | Autonomous | Missed entirely |
-| **R** Repair | Agent produces a corrected state | Fully resolved | No correction |
-| **V** Verification | Agent confirms repair worked | Explicitly validated | Skipped |
-| **S** Stability | Repair doesn't break other things | All sub-scores >= baseline | Cascade triggered |
+- memory becomes inconsistent
+- goals drift
+- causal chains break
+- repairs create secondary failures
 
-Multiplicative: any zero collapses the whole score.
+CRepair evaluates not just whether an AI fails, but whether it can recover.
 
 ---
 
-## Six Failure Types
+## Core Metric
 
-| Type | Cascade Risk |
-|------|-------------|
-| Memory Conflict | Low |
-| Goal Drift | Medium |
-| False Premise | Medium |
-| Identity Inconsistency | High |
-| Causal Contradiction | High |
-| **Repair-Induced Cascade** | Critical |
+C_repair = D × R × V × S
+
+Where:
+
+- D = Detection
+- R = Repair
+- V = Verification
+- S = Stability
+
+If any component = 0:
+
+C_repair = 0
+
+---
+
+## Failure Types
+
+- Memory Conflict
+- Goal Drift
+- False Premise
+- Identity Inconsistency
+- Causal Contradiction
+- Repair-Induced Cascade
+
+---
+
+## Pilot Results (Claude Sonnet)
+
+| Condition | D | R | V | S |
+|---|---:|---:|---:|---:|
+| Standard | 54% | 54% | 0% | 92% |
+| Reflection | 92% | 54% | 8% | 92% |
+| Memory | 100% | 46% | 8% | 92% |
+| Repair Loop | 92% | 85% | 38% | 100% |
+
+Key finding:
+
+**Verification appears to be the bottleneck of AI self-repair.**
 
 ---
 
 ## Quickstart
 
 ```bash
-pip install anthropic openai
+pip install -r requirements.txt
 
-# Sanity check first
 python -m crepair.experiments.run --sanity --model claude
 
-# Full run
 python -m crepair.experiments.run --model claude --condition standard
-python -m crepair.experiments.run --model gpt-4o --condition all
 ```
 
 ---
 
-## Leaderboard (to be filled with real results)
+## Repository Structure
 
-| Model | Condition | D | R | V | S | C_repair |
-|-------|-----------|---|---|---|---|---------|
-| GPT-4o | standard | — | — | — | — | — |
-| Claude | standard | — | — | — | — | — |
-| Gemini | standard | — | — | — | — | — |
+```text
+scenarios/
+evaluators/
+models/
+scoring/
+experiments/
+results/
+paper/
+```
 
 ---
 
-## Structure
+## Paper
 
-```
-crepair/
-├── scenarios/          # 13 scenarios across 6 failure types
-├── evaluators/         # LLM-as-judge for D, R, V, S
-├── scoring/            # C_repair = D x R x V x S
-├── models/             # Claude / GPT-4o / local adapters
-├── experiments/        # run.py — main entry point
-└── results/            # leaderboard.csv accumulates over time
-```
+Preprint:
+
+paper/CRepair_Paper_v0_1.docx
+
+Research proposal:
+
+paper/CRepair_Research_Proposal_v1_3_FINAL.docx
+
+---
+
+## Citation
+
+Coming soon (Zenodo DOI)
