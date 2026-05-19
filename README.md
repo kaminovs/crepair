@@ -103,6 +103,14 @@ paper/CRepair_Research_Proposal_v1_3_FINAL.docx
 
 ## Citation
 
-Kaminovs, S. (2026). CRepair Benchmark v0.2 [Software].
-Zenodo.
+Paper:
+
+Kaminovs, S. (2026).
+Detecting and Repairing Coherence Failures in Long-Horizon AI Agents.
+https://doi.org/10.5281/zenodo.20283434
+
+Software:
+
+Kaminovs, S. (2026).
+CRepair Benchmark v0.2 [Software].
 https://doi.org/10.5281/zenodo.20283370
