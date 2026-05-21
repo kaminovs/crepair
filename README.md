@@ -101,6 +101,22 @@ paper/CRepair_Research_Proposal_v1_3_FINAL.docx
 
 ---
 
+---
+
+## RESEARCH CONTEXT
+
+This project uses the **CRepair-SQL Layer** (`crepair_sql_protocol.md`) for structural verification of every SQL query.
+
+CRepair is a research programme measuring structural self-repair in AI agents:
+
+| Paper | Title | DOI |
+|---|---|---|
+| Paper 1 | Detecting and Repairing Coherence Failures in Long-Horizon AI Agents | [10.5281/zenodo.20283434](https://doi.org/10.5281/zenodo.20283434) |
+| Paper 2 | Structured Runtime Intervention Improves Verification Behaviour in LLM Agents | [10.5281/zenodo.20324352](https://doi.org/10.5281/zenodo.20324352) |
+| Repo | CRepair Benchmark Software | [10.5281/zenodo.20283370](https://doi.org/10.5281/zenodo.20283370) |
+
+The CRepair-SQL protocol in this project is the first practical application of the CRepair enforcement layer — applied to BigQuery/casino analytics SQL rather than abstract agent tasks.
+
 ## Citation
 
 Paper:
@@ -108,6 +124,7 @@ Paper:
 Kaminovs, S. (2026).
 Detecting and Repairing Coherence Failures in Long-Horizon AI Agents.
 https://doi.org/10.5281/zenodo.20283434
+
 
 Software:
 
