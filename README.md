@@ -131,3 +131,13 @@ Software:
 Kaminovs, S. (2026).
 CRepair Benchmark v0.2 [Software].
 https://doi.org/10.5281/zenodo.20283370
+
+## Support this research
+
+This project is funded independently. If you'd like to support 
+cross-model replication (GPT-4o + Gemini), I have an open grant 
+application on Manifund:
+
+👉 [manifund.org/projects/crepair-cross-model-replication-of-llm-self-repair-benchmark](https://manifund.org/projects/crepair-cross-model-replication-of-llm-self-repair-benchmark)
+
+
