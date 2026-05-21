@@ -100,22 +100,22 @@ Research proposal:
 paper/CRepair_Research_Proposal_v1_3_FINAL.docx
 
 ---
-
 ---
 
-## RESEARCH CONTEXT
+## Paper 2
 
-This project uses the **CRepair-SQL Layer** (`crepair_sql_protocol.md`) for structural verification of every SQL query.
+**Structured Runtime Intervention Improves Verification Behaviour in LLM Agents: A CRepair Pilot Study**
 
-CRepair is a research programme measuring structural self-repair in AI agents:
+Ablation evidence that structured repair scaffolding, not re-prompting, drives self-repair improvement.
 
-| Paper | Title | DOI |
-|---|---|---|
-| Paper 1 | Detecting and Repairing Coherence Failures in Long-Horizon AI Agents | [10.5281/zenodo.20283434](https://doi.org/10.5281/zenodo.20283434) |
-| Paper 2 | Structured Runtime Intervention Improves Verification Behaviour in LLM Agents | [10.5281/zenodo.20324352](https://doi.org/10.5281/zenodo.20324352) |
-| Repo | CRepair Benchmark Software | [10.5281/zenodo.20283370](https://doi.org/10.5281/zenodo.20283370) |
+- 3 independent runs × 13 scenarios × 3 conditions (baseline / generic retry / CRepair wrapper)
+- Mean ΔC: **+0.333** (wrapper) vs **+0.051** (generic retry)
+- Verification traces in all wrapped responses vs 54–77% at baseline
+- No zero-component failures under the wrapper in any run
 
-The CRepair-SQL protocol in this project is the first practical application of the CRepair enforcement layer — applied to BigQuery/casino analytics SQL rather than abstract agent tasks.
+📄 [Preprint — DOI: 10.5281/zenodo.20324352](https://doi.org/10.5281/zenodo.20324352)
+---
+
 
 ## Citation
 
